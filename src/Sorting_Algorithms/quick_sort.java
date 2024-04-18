@@ -16,13 +16,13 @@ public class quick_sort {
         int s = low;
         int e = hi;
         int mid = s + (e - s) / 2;
-        int pviot = arr[mid];
+        int pivot = arr[mid];
 
         while (s <= e){
-            while (arr[s] < pviot){
+            while (arr[s] < pivot){
                 s++;
             }
-            while (arr[e] > pviot){
+            while (arr[e] > pivot){
                 e--;
             }
 
