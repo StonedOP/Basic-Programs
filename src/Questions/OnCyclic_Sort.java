@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
+
 
 public class OnCyclic_Sort {
     public static void main(String[] args) {
@@ -76,8 +76,8 @@ using 1 more loop to find which no. is missing
         while (i < arr.length) {
             int correctIndex = arr[i] - 1;
             if (arr[i] != i + 1) {
-// heer we check if the value at i != i + 1
-                //and then if that value at i is = to value at the correct index that means its a duplicate element
+// here we check if the value at i != i + 1
+//and then if that value at (i) is = to value at the correct index that means it's a duplicate element
                 if (arr[i] != arr[correctIndex]) {
                     swap(arr, i, correctIndex);
                 }else{
@@ -111,7 +111,7 @@ using 1 more loop to find which no. is missing
 
 //one no. is duplicated in an array by removing one form it
     // find the duplicated and missing numbers index od duplicate number + 1
-    static int[] duplicate_and_missing(int arr[]){
+    static int[] duplicate_and_missing(int[] arr){
         int i = 0;
         while (i < arr.length){
             int correctIndex = arr[i] - 1;
