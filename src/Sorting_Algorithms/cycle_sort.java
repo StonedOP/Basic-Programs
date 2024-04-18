@@ -9,8 +9,8 @@ public class cycle_sort {
         cycle_SOrt(arr);
         System.out.println(Arrays.toString(arr));
     }
-    // here the array is between 1 to N sp the correct index is (arr[i] - 1)
-    //if the array is between 0 to N then the correct index will be (arr[i])
+    // here the array is between (1 to N) sp the (correct index) is (arr[i] - 1) or (value - 1)
+    //if the array is between (0 to N) then the (correct index) is (arr[i]) or (value)
     static void cycle_SOrt(int[] arr){
         int i = 0;
         while(i < arr.length){
