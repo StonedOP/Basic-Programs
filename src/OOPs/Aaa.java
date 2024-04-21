@@ -1,2 +1,5 @@
-package OOPs;public interface Aaa {
+package OOPs;
+
+public interface Aaa {
+    void hello();
 }
