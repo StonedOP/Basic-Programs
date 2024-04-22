@@ -1,0 +1,38 @@
+we can not create a with same name in a package.
+
+if we want to create to classes of same name we can create 2 packages and that will allow us to create
+class of same name that can have different use cases.
+
+when we are writing a file we have to mention in which package that file lies at the top
+
+                              ABOUT STATIC
+IF in constructor we do (this.staticVAR) java give warning  even though it works
+internally java checks when a new obj is created--- at this.staticVar
+                                              does that obj i.e naman have a var called population & that's false
+                                  then it checks does the Human class has a var population & that's true
+                                  & its static var so it does increase it by 1
+      it will be the same case when we will be calling the static var use class name
+
+                        DEFINITION
+WHEN A MEMBER IS DECLARED AS STATIC IT CAN BE ACCESSED BEFORE ANY OF THE OBJ IN CLASS IS BEING CREATED AND WITHOUT
+REFERENCING TO THE OBJECT
+i.e. if no obj is created we can still access the static variables
+            ANS TO WHY main is static
+making main static means we can use main method without creating an obj of that class & main is first thing when we run
+& in order to run any thing in class u have to crete obj of that class
+            so we should be able to run main without creating then obj of that class
+        that's why it is static
+SO THESE STATIC VAR , STATIC METHOD BELONG TO THE CLASS NOT TO THE OBJ
+
+in Main line 30
+    fun()-> to greeting() -- i see u r dependent on obj so, greeting() where is your obj
+greeting()-> to fun() -- oh sorry, I don't have one
+    fun()-> to greeting() -- u cant run without  obj IF u wnt to run without an obj make your self static
+
+SO IN   line 34
+            we crete an obj for greeting() to eun in static function() fun()
+
+
+
+SINCE static stuff or methods do not depend on objects and obj are created during run time
+   Hence static stuff or methods is resolved during compile time
