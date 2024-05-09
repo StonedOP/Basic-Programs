@@ -1,0 +1,37 @@
+Polly means - many
+Morphism means - maye ways to represent
+                    TYPES OF POLYMORPHISM
+1. Compile Time Polymorphism or static Polymorphism->
+   Can be achieved by Method Overloading i.e.same name of method but types, argument, return type or ordering can be diff
+    eg Multiple constructors      A a = new A();
+                                  A aa = new A(1,2,3);
+
+2. Run Time Polymorphism or Dynamic Polymorphism->
+    Can be achieved by Method Overriding
+    i.e. when a child class has a method name same as the parent class
+                                  Parent obj = new Child();
+      here, which method will be called depends on <new Cild();> type of child
+      this is known as Upcasting
+    this whole process is called overriding
+    Dynamic Method Dispatch - means that java determines which overridden method to run during runtime that is why
+    its also called run time or dynamic polymorphism or late binding
+                        FINAL
+ we can't override a method that is final
+method that are declared as final can provide performance enhancement
+as the compiler will know the final method will not be overridden so, java compiler can can copy the byte code directly
+to the compile code of the calling method                                i.e. the step that
+ which one to resolve that only happens during run time will be reduced coz final method can't be overridden
+ also known as early binding when a method is made final
+
+                        STATIC
+static method can't be overridden
+Inheritance Class Box line8 static void greeting() method called in Inheritance\Main
+Inheritance Class BoxWeight line6 @override greeting() won't work
+overriding depends on objects and static doesn't depend on objects so, static methods can't be overridden
+
+Inheritance Main Line50 = java will ask does BoxWeight class has greeting method -> it will say NO
+             then it will ask if the parent class i.e. Box class has greeting method -> it will say yes
+ then it call the static method greeting() from Box class because of inheritance
+ that means static method are inherited but can not be orridden
+
+so, static methods are called by class names even if it is the child class

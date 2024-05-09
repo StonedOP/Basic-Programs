@@ -1,0 +1,46 @@
+every single we create has Object as its super class
+
+any class is a base class
+    base class annot have properties only present in child class
+and class derived form it is child class and it can inherit properties of base class
+    it can have additional arguments
+
+    class Child extends Base{}
+
+when we initialise tha constructor we have to initialise parent class variables also
+
+child can access extra variables above in the parent  BUT if the obj is directly created of parent class
+it will not be able to access the child properties
+
+
+                VVVVVVVVVVVVVVVImportant                line21 we wont be able to access weight
+it is actually the type of reference variable AND NOT THE TYPE OF OBJECT that determines what members can be accessed
+
+
+super key word
+if the parent class and child class has a same variable say (p)
+then if we access it by this.p in child then it will call the one in child
+bu if access it by super.p then it will access the one in parent
+
+if we don't call the super() constructor in child clas const then it will call the default form parent
+i.e. if we don't call super in line16 of BoxWeight then it will call the default on in Box i.e. line7
+
+
+                            // java  does not support Multiple Inheritance because
+    IF a class C has 2 parent classes say A and B, say A & B both have a same variable (int n)
+    if we run sout(n) then java will get confused which variable to access one in class A or in class B
+that's why Multiple Inheritance is not supported in java
+
+
+final
+if we declare a class final then it does not allow that class to be inherited
+also it implicitly declare its method as final
+
+                static
+
+Inheritance Main Line50 = java will ask does BoxWeight class has greeting method -> it will say NO
+             then it will ask if the parent class i.e. Box class has greeting method -> it will say yes
+ then it call the static method greeting() from Box class because of inheritance
+ that means static method are inherited but can not be orridden
+
+so, static methods are called by class names even if it is the child class

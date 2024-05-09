@@ -37,7 +37,7 @@ public class InnerClasses {
         Test a = new Test("naman");
         Test b = new Test("rahul");
 // when a class is made static we check where it is mentioned as static
-//here this test calls is mentioned as static inside InnerClasses
+//here this test class is mentioned as static inside InnerClasses
         //hence it is not dependent on the objects of InnerClasses class
 
 //BUT Main & Test can have instances of each other

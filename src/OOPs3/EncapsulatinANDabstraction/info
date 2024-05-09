@@ -1,0 +1,50 @@
+Encapsulation means
+        wrapping up the implementation of data members(like variables) and methods in a class
+it hides the data or code into a single entity or a unite so that it can be protected from outside world
+the internal making of the class is taken care in encapsulation
+
+the complex things that we have to work with, putting this in calls, making it public,private or hiding the data
+members that is encapsulation
+
+it is implementation level
+
+encapsulation means putting things in classes, hiding internal details using public,private methods
+
+encapsulation is the process of containing the information
+like objects and other stuff they were all encapsulated
+
+accessing that hidden data that was private l is encapsulation
+so we can create a getter method lets say getL() in Box class line11 to access the l private variable in Main line52
+
+encapsulation focuses on hiding the complexity
+
+in encapsulation data can public or private
+encapsulation is sub process in data hiding
+
+Abstraction means
+        hiding the unnecessary details and showing valuable information
+eg. we don't to know the internal mechanics of the car to run it we just need a key to start the car
+like ArrayList is called abstract data type
+it has some methods like get() and we ue those methods by not carrying how it internally works
+
+it is design level
+
+the this that are visible to me like the get() method
+
+abstraction is done by using abstract class, interfaces
+
+abstraction is the process of gaining the information
+
+**eg in Box class l was made private i.e. data hiding
+data hiding focuses on security
+like making the  l as private in Package Inheritance Box class line4
+
+so in data hiding data should be private and should no tbe accessed directly
+
+
+
+                                            EXAMPLE
+lets say we are making a linked list and internally it is implemented as a normal array
+we should be able to modify that linked list bye LL.get(),list.update() that is called encapsulation
+but , we should not be able to directly access that array
+that array should be private that is called data hiding
