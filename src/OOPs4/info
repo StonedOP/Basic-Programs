@@ -1,0 +1,24 @@
+                |       |       | SubClass | SubClass |
+                | Class |Package|(same pkg)|(diff pkg)|         World
+                |       |       |          |          |  (diff pkg & not subClass)
+---------------------------------------------------------------------
+Public          |   *   |   *   |    *     |    *     |    *
+---------------------------------------------------------------------
+Protected       |   *   |   *   |    *     |    *     |
+---------------------------------------------------------------------
+no modifier     |   *   |   *   |    *     |          |
+or default      |       |       |          |          |
+---------------------------------------------------------------------
+Private         |   *   |       |          |          |
+
+
+
+
+in line21 of OOPs4ENCAPSULATION..... package- when we try to access the protected member without using subClass
+i.e.            A obj1 = new OOPs4.SubClass(44, 78, "accessed by base class");
+                int v = obj1.pro;       this will give error
+here if we want A to access it, it will check that
+        you have created a reference variable obj1 of type class A and we want to access the variable (int pro)
+    so, JAVA will say let me see what type of (pro) is and that is of protected type so,
+its only able to access this in a diff package when you are accessing it with a subClass i.e. line23
+

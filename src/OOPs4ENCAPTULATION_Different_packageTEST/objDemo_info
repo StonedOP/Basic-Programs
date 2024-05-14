@@ -1,0 +1,16 @@
+Line->54 will give error if(obj4 < obj3) as Java will get confused which variable we want it to compare coz we are
+creating an obj with a constructor taking 2 arguments
+
+when the equals method uses super.equals(obj) i.e. in Line->25
+Line->57,60 in both the cases it says false and not display anything when the (num) value is different
+but even if make both values same it still won't print anything
+when its equals method is changed Line->26, it will print the Line->61 condition
+
+IF we want to check weather particular thing is an instanceOf some class
+                                                                          we use (obj name) instanceOf (class name)
+lets we have to check the instance of obj in OOPs4/SubClass
+
+
+in Object class there is a method getClass() - this provide information about the class of that obj
+also this getClass() method can't be overridden because its declared as final
+this can als be used to gat information or data about class like other classes,constructors,interfaces etc.

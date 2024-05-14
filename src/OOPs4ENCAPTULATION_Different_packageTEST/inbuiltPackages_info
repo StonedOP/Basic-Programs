@@ -1,0 +1,14 @@
+some inbuilt packages in java
+
+1. lang  -> it contains the essential e.g. operatin like +,-,/,%
+         -> it is automatically imported
+         -> it also contain object class
+2. i/o   -> it contains input output classes
+         -> used in file reading , OPTIMISED I/O for competitive programming, buffer reader
+3. util -> it contains data structures and collection framework
+
+4. applet -> its on the development side
+5. awt    -> its for GUI (Graphical Use Interface)
+          -> like if have to create buttons and stuff
+6. net    -> working with internet, connecting and stuff while building an app
+          -> networking operations
