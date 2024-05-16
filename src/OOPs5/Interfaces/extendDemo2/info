@@ -1,0 +1,14 @@
+we can create a default method in interfaces i.e. it can have a body in it and we don't need to override but
+we can't have same default method it will create the same problem that we were trying to solve for inheriting multiple
+classes
+Line->6-Interface B that will give error
+
+in Interface if we want to create a static method
+Static interface methods should always have a body-> as it can't be Overridden
+also its ca;;ed by using the name of the interface
+
+
+also the access modifier for the Overridden methods should same or better
+e.g.  if in the parent class the method was protected then the overridden method should be protected or public
+it can't be more restrictive i.e. private
+if its public in parent class then it can't be default as well

@@ -1,0 +1,32 @@
+Java doesn't support multiple inheritance
+
+            Abstract classes->
+so sometimes we want to create a class that gives us generalised form of method that will be shared by all the classes
+so parent class will be providing resource to the subclasses i.e. method's body is decided by subclass
+
+so the methods in the parent class will be called empty methods or abstract methods that doesn't have a body
+and we can override those methods in subclasses to create different body of function
+
+**AND if a class contain an abstract method and it should also be declared as abstract class
+every child class have to override all the abstract methods in parent class
+
+Line8->Parent- we can create a constructor in abstract classes and call it by {super();} in sub classes Line5->Daughter
+** we can't create (abstract constructors)
+
+** we can't create obj of an abstract class. Line13->Main -will give error
+but we can create static methods in abstract classes Line13->Parent called in Line15->Main
+
+because we can not inherit the final class so abstract classes can't be final
+abstract classes can have final variables but since a variable is final we have to initialise it on constructor
+line5->Parent (final int value)  initialised in the constructor & it can not called in main directly so,
+we have to call it by super()
+also we can have static variables in abstract classes
+
+but because we can create normal methods in abstract classes its not possible to have multiple inheritance as the same
+problem will arise that java will get confused between 2 similar methods in different classes if they are inherited
+
+            INTERFACES
+it is implemented by using (implements) keyword to use them in classes but to inherit A (interface) to B extend is used
+its not a class but has the extension same as classes .java
+so we can't create objects of interfaces and the methods are abstract methods so, by default
+the variables are final static in interfaces

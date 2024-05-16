@@ -1,0 +1,9 @@
+2 different classes no matter who their parents are can implement many or same interfaces
+we can make the type of the variable as the type of interface i.e.
+we should not use interfaces in performance critical situations
+
+if we create an object of -> Media carMedia = new car(); and call the stop function carMedia.stop();it will run
+the one in Car class & return "I stop engine like a Normal car."
+so if want to change the engine we've to create new class|       that's why we create separate classes for interfaces
+
+we can create different classes for an interface like powerEngine, ElectricEngine
