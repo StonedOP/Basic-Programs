@@ -11,9 +11,10 @@ public class CustomArrayList {
         private int size = 0; // it is working as index value
 
     public CustomArrayList() {
-        this.data = new int [DEFAULT_SIZE];
+
+        data = new int [DEFAULT_SIZE];
     }
-    //lets make an add function first
+    //let's make an add function first
     public void add(int num){
 //in arrayList if the size is full then the size gets doubled
         if (isFull()){
