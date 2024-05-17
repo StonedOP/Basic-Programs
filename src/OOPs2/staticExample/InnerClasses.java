@@ -48,7 +48,7 @@ public class InnerClasses {
     // THIS WILL WORK coz this Test1 class doesn't depend on any other class
         Test1 c = new Test1("First declaration");
         Test1 d = new Test1("Second declaration");
-        //the name variable is static and we have updated the static var twice so below will display second
+        //the name variable is static, and we have updated the static var twice so below will display second
         System.out.println(c.name);
         System.out.println(d.name);
 
