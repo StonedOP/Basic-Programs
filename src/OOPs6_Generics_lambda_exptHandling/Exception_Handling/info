@@ -1,0 +1,13 @@
+Object has a class named Throwable  that handles all the exceptions
+
+Throwable has 1.Exceptions 2.Errors
+1.Exceptions -> also has two types A. Checked B.Unchecked
+    A.Checked Exceptions ->Exceptions that are checked during compile time      e.g.
+    if we are trying to access a file and it doesn't exist then it will raise a file not found exception
+    B.Unchecked Exception -> its something that compiler will not be able to detect
+       it will only be detected while program is running  e.g
+       Arthematic exception like (divide by zero) or null pointer exception (null.something)
+2.Errors-> it is something that can't be resolved like stack overflow
+
+throw means that we are throwing an exception
+throws is used to declare exception
