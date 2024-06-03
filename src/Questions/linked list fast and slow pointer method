@@ -1,0 +1,6 @@
+this method is used to detect cycle in a linked list as we move 1 pointer twice the speed of other
+also can be use to find a node
+so the idea is we take 2 pointers starting from head with every single time a loop is run
+    slow pointer will move 1 by 1   AND
+    fast pointer will move 2 by 2
+                                    so at some point they will meet each other that means cycle is present

@@ -8,4 +8,7 @@ public interface B {
 //        System.out.println("i am in interface A");
 //    }
 
+    static void greeting(){
+        System.out.println("i am static greeting method in B Interface ");
+    }
 }

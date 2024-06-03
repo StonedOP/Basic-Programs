@@ -1,0 +1,8 @@
+in linked there is not continuous memory allocation , its divided into separate boxes in heep and connected by arrows
+this box is called node, where head points to the first item and tail points to last item
+when every single item knows about next item
+
+individual box has its own type and properties i.e. int value , whom its pointing to Node next
+tail.next points to null
+so no one has any idea about other than the next item
+so if we want to go to the 3rd node we'll make a temp node and run the for loop 3 times
