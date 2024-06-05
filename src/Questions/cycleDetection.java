@@ -51,7 +51,7 @@ public class cycleDetection {
     //to return the node value where the cycle is starting
     public static int StartCycleDetection(cycleDetection list){
         int length = lengthOFcycle(list);
-        if (length == 0){
+        if (length <= 0){
             System.out.print("there is no cycle present in the list, so Length is ->");
             return -1;
         }
@@ -144,6 +144,49 @@ public class cycleDetection {
 
 
 
+                                    //reverse a linked list between the given index or nodes
+    public Node reverseBetween(Node head, int left, int right){
+        if (left == right){
+            return head;
+        }
+        //skip the first (left -1) nodes and check for null pointer
+//will start from current as head and prev as null
+        Node current = head;
+        Node prev = null;
+        for (int i = 0;  current != null && i < left -1; i++) {
+    //when this loop ends the current will be at the left index and prev at left -1 index
+            prev = current;
+            current = current.next;
+        }
+        //now for the reversing part between left and right
+
+        Node last = prev;
+        Node newEnd = current;
+    //we need a variable that holds the current.next value
+        Node next = current.next;
+//we use a for loop as we want to reverse the nodes given in the limit
+        for (int i = 0; current!= null && i < right - left + 1; i++) {
+            current.next = prev;
+            prev = current;
+            current = next;
+            if(next != null){
+                next = next.next;
+            }
+        }
+        if (last != null){
+        //after the reversal of the inner list the node outside of it will be pointing to node of reversed list
+            last.next = prev;
+        }else {//if the list that we want to reverse starts from the node at index of left
+
+            head = prev;
+        }
+//newEnd will be the last in the reversed list and the current is at the end of whole at this point, so we update
+        newEnd.next = current;
+        return head;
+    }
+
+
+
 
 
         public static void main(String[] args) {
@@ -210,5 +253,7 @@ class subClass{
         }
         return ans;
     }
+
+                            //question reverse a linked list
 
 }

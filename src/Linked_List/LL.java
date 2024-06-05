@@ -211,4 +211,95 @@ public class LL {
         }
         return ans;
     }
+
+
+    //BUBBLE SORT
+    public void bubbleSort(){
+        bubbleSort(size -1 , 0);
+    }
+//helper method to make recursion call
+    //we iterate through the list by using col and row , size -1 in row and col as 0 and
+    // we put a condition to check the list by the times of its size, we reduce the row after every pass
+    private void bubbleSort(int row, int col) {
+        if (row == 0){
+            return;
+        }
+        //we check 2 elements at a time by the size to the list so by then end of 1 iteration min will be at end
+        if (col < row){
+            //when all col are checked we decrease the roe by one and by doing so
+            // last element that is the max will not be checked twice
+            Node first = get(col);
+            Node second = get(col + 1);
+
+            if (first.value > second.value){
+            //we check for the col and then in else condition  keep checking for col +1 by recursion and swap
+                //here we swap, we have 3 cases to swap the elements
+               if (first == head){
+                   head = second;
+                   first.next = second.next;
+                   second.next = first;
+               } else if (second == tail) {
+            //we need the previous node to the current col we are at
+                   Node prev = get(col -1);
+                   prev.next = second;
+                   tail = first;
+
+                   first.next = null;
+                   //also we have to update the tail
+                   second.next = tail;
+               }else {//swap in middle
+                   Node prev = get(col -1);
+                   prev.next = second;
+                   //now i will update the next of first coz we have the that value
+                   first.next = second.next;
+                   //now we change the next of second as second is smaller than first
+                   second.next = first;
+               }
+            }//this is where 2 elements will be swapped ,so we call the check for next 2
+            bubbleSort(row, col +1);
+        }else {
+            //this is where the min element will be at last, so we exclude that by reducing the row length
+            bubbleSort(row - 1, 0);//the next iteration starts here
+        }
+    }
+
+                        //reverse a linked list by recursion
+    private void reverse(Node node){
+        if(node == tail){//this is the base condition
+            head = tail;
+            return;
+        }
+        // now we keep calling the fun to reach the end of the list
+        reverse(node.next); //at the end tail will become head
+//now after this function will start moving outwards
+        tail.next = node;
+        tail = node;
+
+        tail.next = null;
+    }
+
+
+                            //InPlace reversal of linked list
+                            //when only head is provided
+    // to do that we will use 3 pointers prev pointing to null , a present and a next
+    public void inPlaceRev(Node head){
+        if(size < 2){
+            return;
+        }
+
+        Node present = head;
+        Node prev = null;
+        Node next = present.next;
+
+        while(present != null){//in the end when the condition will hit prev will be equal to last node
+            present.next = prev;
+            prev = present;
+            present = next;
+            //we need to put a null pointer check for next
+            if (next != null){
+                next = next.next;
+            }
+        }//in the end prev will lie at the end
+        head = prev;
+    }
 }
