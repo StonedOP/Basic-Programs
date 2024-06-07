@@ -172,6 +172,7 @@ public class LL {
 
 
                                             //question
+    //used in Questions Package LinkedList_revLL-etc
 //removing duplicates from a sorted linked list
     public void duplicates(){
         Node node = head;
@@ -213,7 +214,8 @@ public class LL {
     }
 
 
-    //BUBBLE SORT
+
+                                //BUBBLE SORT
     public void bubbleSort(){
         bubbleSort(size -1 , 0);
     }

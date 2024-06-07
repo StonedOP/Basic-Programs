@@ -1,5 +1,7 @@
 package Questions;
 
+import OOPs5.abstractDemo.Parent;
+
 //we create a linked list and then brute force a cycle into it
 public class cycleDetection {
 
@@ -74,7 +76,7 @@ public class cycleDetection {
     public static Node middleOfLinked(cycleDetection list){
         Node fast = list.head;
         Node slow = list.head;
-        while (fast != null & fast.next != null){
+        while (fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -102,6 +104,7 @@ public class cycleDetection {
     public void insertLast(int value){
         if (tail == null){
             insert(value);
+            return;
         }
 
         Node  temp = new Node(value);
@@ -185,7 +188,133 @@ public class cycleDetection {
         return head;
     }
 
+    public Node rev(Node node){
+        if (node == tail){
+            head = tail;
+            return node;
+        }
+        rev(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+        return node;
+    }
+    public Node revforP(Node node){
+        if (node == null){
+            return node;
+        }
+        Node current = node;
+        Node prev = null;
+        Node next = current.next;
 
+        while (current != null){
+            current.next = prev;
+            prev = current;
+            current = next;
+            if (next != null){
+                next = next.next;
+            }
+        }
+        node = prev;
+        return node;
+    }
+                    //palindrome Linked List
+    //if we read the linked list from start to middle and middle to end then it should be same
+    //the idea is -- we find the middle and reverse the linked list to traverse it and then re reverse it
+
+       public Node middle(Node head){
+        Node midPrev = null;
+        while (head != null && head.next != null){
+            midPrev = (midPrev == null) ? head : midPrev.next;
+            head= head.next.next;
+        }
+        Node mid = midPrev.next;
+        midPrev.next = null;
+        return mid;
+    }
+
+    public boolean palindrome(cycleDetection list){
+        Node start = head ;
+        Node mid = middleOfLinked(list);
+        Node reverseSecond = revforP(mid);
+        //we have top re reverse it, so we store this variable
+        Node reReverseHead = reverseSecond;
+        //now compare both half
+        while(start != null && reverseSecond != null){
+            if (start.val != reverseSecond.val){ // it means not a palindrome
+                break;
+            }
+            start = start.next;
+            reverseSecond = reverseSecond.next;
+        }
+
+        revforP(reReverseHead);
+        //if we were able to traverse through the list without hitting a break its is palindrome
+        return start == null || reverseSecond == null;
+
+    }
+
+
+    // REORDER list as 1st -> last -> 2nd -> 2ndLast -> 3rd -> 3rdLast
+        //because we can't move backwards we reverse the half of the list and then reorder it
+    public void reorder(Node node){
+        if (node == null || node.next == null){
+            return;
+        }
+        Node mid = middle(node);
+        Node hf = node;
+        Node hs = revforP(node);
+
+        while(hf != null && hs != null){
+            Node temp = hf.next;
+            hf.next = hs;
+            hf = temp;
+
+            temp = hs.next;
+            hs.next = hf;
+            hs = temp;
+        }
+        //this sets next of tail to null
+        if(hf != null){
+            hf.next = null;
+        }
+    }
+
+
+
+    //reverse every group of size k
+    public Node revKgroup (Node node, int k){
+        if (k <= 1 || node == null) {
+            return node;
+        }
+        Node current = head;
+        Node prev = null;
+        //we run a infinite while loop
+        while (true){
+            Node last = prev;
+            Node newEnd = current;
+            Node next = current.next;
+
+            for (int i = 0; current != null && i < k; i++) {
+                current.next = prev;
+                prev = current;
+                current = next;
+                if(next != null){
+                    next = next.next;
+                }
+            }
+            if(last != null){
+                last.next = prev;
+            }else{
+                node = prev;
+            }
+            newEnd.next = current;
+            if(current == null){
+              break;
+            }
+        }
+        return node;
+    }
 
 
 
@@ -219,6 +348,19 @@ public class cycleDetection {
 
             System.out.println(toString(middleOfLinked(list2)));
             System.out.println(deleteNode(list2));;
+
+
+            cycleDetection list3 = new cycleDetection();
+            list3.insert(1);
+            list3.insertLast(2);
+//            list3.insertLast(3);
+//            list3.insertLast(4);
+//            list3.insertLast(4);
+//            list3.insertLast(3);
+            list3.insertLast(2);
+            list3.insertLast(1);
+            list3.display();
+            System.out.println(list3.palindrome(list3));
     }
 
 }
