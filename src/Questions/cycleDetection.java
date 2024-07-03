@@ -309,13 +309,84 @@ public class cycleDetection {
                 node = prev;
             }
             newEnd.next = current;
+            //this is the termination condition the loop will break when this will hit
             if(current == null){
               break;
             }
         }
         return node;
     }
+    //PROGRAM to reverse the k nodes in a linked list in every k intervals
+    //so here we reverse the first k nodes and then skip k
+    public Node revAlternateK_Nodes(Node node , int k){
+        if (node == null || node.next == null){
+            return node;
+        }
+        Node current = node;
+        Node prev = null;
 
+        while (current!= null){
+            //we create two nodes to keep track of current and prev
+            Node last = prev;
+            Node newEnd = current;
+
+            Node next = current.next;
+            //now we run the for loop to reverse the k nodes
+            for (int i = 0; current!= null && i < k; i++) {
+                current.next = prev;
+                prev = current;
+                current = next;
+                if (next != null) {
+                    next = next.next;
+                }
+            }
+            //now we update the last and newEnd to keep the loop going on
+            if (last!= null){
+                last.next = prev;
+            }else {
+                last = node;
+            }
+            newEnd.next = current;
+
+            //now a loop to skip the k nodes
+            for (int j = 0; current != null && j < k; j++) {
+                prev = current;
+                current = current.next;
+            }
+        }
+        return node;
+    }
+
+    //rotating the linked list k times
+    //i.e. the last k node will come at the start of the list, so we have to skip len - k to get the new head
+    //also if we are asked to rotate the list by len times then there will be no overall change, so we use
+    // k % len to find the no. of rotations and then subtract it form length to find head of the sub list that
+    // will be attached with the original head
+        public Node rotateList(Node node, int k){
+            if(k <= 0 || node == null || node.next == null){
+                return node;
+            }
+            int length = 1;
+            //so first we find the last node so that we can point it to original head
+            Node last = node;
+            while (last.next!= null){
+                last = last.next;
+                length++;
+            }
+            last.next = node;
+            int rotations = k % length;
+            //no. of that we have to skip to find the newLast
+            int skip = length - rotations;
+            Node newLast = node;
+            for (int i = 0; i < skip - 1; i++) {
+                newLast = newLast.next;
+            }
+            node = newLast;
+            newLast.next = null;
+
+            return node;
+        }
+                            //end of questions
 
 
         public static void main(String[] args) {
